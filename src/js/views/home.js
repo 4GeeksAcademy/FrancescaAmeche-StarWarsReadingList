@@ -7,7 +7,7 @@ import {Vehicles} from "./vehicles"
 
 export const Home = () => (
 	<div>
-		<People></People>
+		{store.people.map((item) => <People key={item.uid}/>)}
 		<Planets></Planets>
 		<Vehicles></Vehicles>
 	</div>

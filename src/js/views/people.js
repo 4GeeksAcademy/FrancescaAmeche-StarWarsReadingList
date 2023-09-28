@@ -12,10 +12,7 @@ import { Context } from "../store/appContext";
 				<div className="peoplePage container">
 					<h3>People</h3>
 					<div className="starWarsCard row row-cols-1 row-cols-md-3 g-4 d-flex flex-row flex-nowrap" >
-							{store.people.map((item, index) => {
-								return (
-									
-										<div className="col" key={item.uid}>
+										<div className="col">
 											<div className="card mb-4">
 												<img src="https://fakeimg.pl/400x200" className="card-img-top" alt="..."/>
 												<div className="card-body">
@@ -33,8 +30,7 @@ import { Context } from "../store/appContext";
 											</div>
 										</div>
 									
-										);
-									})}	
+										
 					</div>
 				</div>
 		);

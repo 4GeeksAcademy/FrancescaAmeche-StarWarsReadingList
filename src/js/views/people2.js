@@ -1,14 +1,18 @@
-import React, {useContext, useState, useParams, useEffect} from "react";
-import { Link } from "react-router-dom";
+import React, {useContext, useState, useEffect} from "react";
+import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 
 export const People2 = () => {
     const { store, actions } = useContext(Context);
     const [people, setPeople] = useState();
-    useEffect(()=> {
-        fetch("https://www.swapi.tech/api//people/" + "1")
+    const params = useParams();
+    console.log(params)
+    useEffect((item, index)=> {
+        
+        fetch("https://www.swapi.tech/api//people/" + params.people_id)
         .then(res => res.json())
-        .then((data) => setPeople(data.result.properties));
+        .then((data) => console.log(data.result.properties))
+        // .then((data) => setPeople(data.result.properties));
     },[])
     return (
         <div className="peoplePage container">
@@ -22,7 +26,7 @@ export const People2 = () => {
             </div>
             <div className="row">
                 <div className="col">
-                    <p>Name</p>
+                    <p>Name: {params.people_id}</p>
                 </div>
                 <div className="col">
                     <p>Birth Year</p>
