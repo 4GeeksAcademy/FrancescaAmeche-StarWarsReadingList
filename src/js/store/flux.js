@@ -2,42 +2,51 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			people: [],
+			people2: [],
 			planets: [],
 			vehicles: []
+
 		},
 
 		actions: {
 			
 			displayPeople: () => {
 				
-				fetch("https://www.swapi.tech/api//people/")
+				fetch("https://swapi.dev/api//people/")
 					.then(res => res.json())
 					.then((data) => {
-						console.log("*******", data)
 						setStore({people: data.results})
+					});
+					},
+
+			displayPeople2: () => {
+				
+				fetch("https://www.swapi.tech/api//people/" + "1")
+					.then(res => res.json())
+					.then((data) => {
+						setStore({people2: data.result})
 					});
 					},
 
 			displayPlanets: () => {
 						
-				fetch("https://www.swapi.tech/api//planets/")
+				fetch("https://swapi.dev/api//planets/")
 					.then(res => res.json())
 					.then((data) => {
-						console.log("*******", data)
 						setStore({planets: data.results})
 					});
 					},
 
 			displayVehicles: () => {
 					
-				fetch("https://www.swapi.tech/api//vehicles/")
+				fetch("https://swapi.dev/api//vehicles/")
 					.then(res => res.json())
 					.then((data) => {
-						console.log("*******", data)
 						setStore({vehicles: data.results})
 					});
 					},
 			
+		
 		}
 	};
 };

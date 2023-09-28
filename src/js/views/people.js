@@ -11,22 +11,24 @@ import { Context } from "../store/appContext";
 			return (
 				<div className="peoplePage container">
 					<h3>People</h3>
-					<div className="row row-cols-1 row-cols-md-3 g-4 d-flex flex-row flex-nowrap" >
+					<div className="starWarsCard row row-cols-1 row-cols-md-3 g-4 d-flex flex-row flex-nowrap" >
 							{store.people.map((item, index) => {
 								return (
 									
-										<div className="col" key={item.id}>
-											<div className="card">
-												<img src="..." className="card-img-top" alt="..."/>
+										<div className="col" key={item.uid}>
+											<div className="card mb-4">
+												<img src="https://fakeimg.pl/400x200" className="card-img-top" alt="..."/>
 												<div className="card-body">
 													<h5 className="card-title">{item.name}</h5>
 													<p className="card-text">Gender: {item.gender}</p>
 													<p className="card-text">Hair color: {item.hair_color}</p>
                                                     <p className="card-text">Eye color: {item.eye_color}</p>
 												</div>
-												<div class="card-footer">
-													<button>Learn more!</button>
-													<button><FontAwesomeIcon icon={faHeart}/></button>
+												<div className="card-footer">
+												<Link to={"/people/" + item.uid}>
+												<button className="btn btn-outline-primary me-3">Learn more!</button>
+												</Link>
+													<button className="heartButton btn btn-outline-warning "><FontAwesomeIcon icon={faHeart}/></button>
 												</div>
 											</div>
 										</div>

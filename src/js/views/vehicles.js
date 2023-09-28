@@ -15,17 +15,17 @@ import { Context } from "../store/appContext";
 							{store.vehicles.map((item, index) => {
 								return (
 									
-										<div className="col" key={item.id}>
-											<div className="card">
-												<img src="..." className="card-img-top" alt="..."/>
+										<div className="col" key={item.uid}>
+											<div className="card mb-4">
+												<img src="https://fakeimg.pl/400x200" className="card-img-top" alt="..."/>
 												<div className="card-body">
 													<h5 className="card-title">{item.name}</h5>
 													<p className="card-text">Model: {item.model}</p>
 													<p className="card-text">Passengers: {item.passengers}</p>
 												</div>
-												<div class="card-footer">
-													<button>Learn more!</button>
-													<button><FontAwesomeIcon icon={faHeart}/></button>
+												<div className="card-footer">
+													<button className="btn btn-outline-primary me-3">Learn more!</button>
+													<button className="btn btn-outline-warning"><FontAwesomeIcon icon={faHeart}/></button>
 												</div>
 											</div>
 										</div>
