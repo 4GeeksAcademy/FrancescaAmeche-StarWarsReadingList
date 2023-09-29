@@ -10,7 +10,7 @@ import { Context } from "../store/appContext";
 		const { store, actions } = useContext(Context);
 			return (
 				<div className="peoplePage container-fluid">
-					<h3 className="text-danger ms-3 mb-4">People</h3>
+					<h3 className="text-danger ms-3 mb-4 mt-3">People</h3>
 					<div className="row g-4 d-flex flex-row flex-nowrap" >
 							{store.people.map((item, index) => {
 								return (
