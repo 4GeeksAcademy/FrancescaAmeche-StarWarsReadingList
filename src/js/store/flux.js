@@ -1,11 +1,10 @@
+import { useParams } from "react-router-dom";
+
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			people: [],
-			people2: [],
-			planets: [],
-			vehicles: []
-
+			planets: []
 		},
 
 		actions: {
@@ -19,15 +18,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 					});
 					},
 
-			displayPeople2: () => {
-				
-				fetch("https://www.swapi.tech/api//people/" + "1")
-					.then(res => res.json())
-					.then((data) => {
-						setStore({people2: data.result})
-					});
-					},
-
 			displayPlanets: () => {
 						
 				fetch("https://swapi.dev/api//planets/")
@@ -37,16 +27,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 					});
 					},
 
-			displayVehicles: () => {
-					
-				fetch("https://swapi.dev/api//vehicles/")
-					.then(res => res.json())
-					.then((data) => {
-						setStore({vehicles: data.results})
-					});
-					},
-			
-		
 		}
 	};
 };

@@ -1,14 +1,14 @@
-import React from "react";
-import rigoImage from "../../img/rigo-baby.jpg";
+import React, { useContext } from "react";
+import { Context } from "../store/appContext";
 import "../../styles/home.css";
 import {Planets} from "./planets"
 import {People} from "./people"
-import {Vehicles} from "./vehicles"
 
-export const Home = () => (
+export const Home = () => {
+	const { store, actions } = useContext(Context);
+	return (
 	<div>
-		{store.people.map((item) => <People key={item.uid}/>)}
+		<People></People>
 		<Planets></Planets>
-		<Vehicles></Vehicles>
 	</div>
-);
+);}
