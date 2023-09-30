@@ -26,7 +26,7 @@ import { Context } from "../store/appContext";
 													<Link to={"/planets/" + (index + 1)}>
 													<button className="btn btn-outline-primary me-3">Learn more!</button>
 													</Link>
-													<button className="btn btn-outline-warning"><FontAwesomeIcon icon={faHeart}/></button>
+													<button onClick={() => actions.displayFavorites(item.name)} className="btn btn-outline-warning"><FontAwesomeIcon icon={faHeart}/></button>
 												</div>
 											</div>
 										</div>

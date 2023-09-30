@@ -37,6 +37,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 					setStore({favorites: [...store.favorites, name]})
 					console.log(store.favorites)
 				}
+			},
+
+			deleteFavorites: (name) => {
+				const store = getStore();
+				console.log(name)
+				setStore({favorites: store.favorites.filter((item) => item != name)})
 			}
 
 		}
