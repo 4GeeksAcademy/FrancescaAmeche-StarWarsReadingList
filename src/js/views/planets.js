@@ -11,7 +11,7 @@ import { Context } from "../store/appContext";
 			return (
 				<div className="planetsPage container-fluid">
 					<h3 className="text-danger ms-3 mb-4">Planets</h3>
-					<div className="row g-4 d-flex flex-row flex-nowrap" >
+					<div className="row g-4 d-flex flex-row flex-nowrap" style={{overflowX: "auto"}} >
 							{store.planets.map((item, index) => {
 								return (
 										<div className="col" key={item.url}>

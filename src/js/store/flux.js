@@ -4,7 +4,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			people: [],
-			planets: []
+			planets: [],
+			favorites: []
 		},
 
 		actions: {
@@ -26,6 +27,17 @@ const getState = ({ getStore, getActions, setStore }) => {
 						setStore({planets: data.results})
 					});
 					},
+
+			displayFavorites: (name) => {
+				const store = getStore();
+				if(store.favorites.includes(name)){
+					setStore({favorites: store.favorites.filter((item) => item != name)})
+				}
+				else {
+					setStore({favorites: [...store.favorites, name]})
+					console.log(store.favorites)
+				}
+			}
 
 		}
 	};

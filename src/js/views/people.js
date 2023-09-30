@@ -11,7 +11,7 @@ import { Context } from "../store/appContext";
 			return (
 				<div className="peoplePage container-fluid">
 					<h3 className="text-danger ms-3 mb-4 mt-3">People</h3>
-					<div className="row g-4 d-flex flex-row flex-nowrap" >
+					<div className="row g-4 d-flex flex-row flex-nowrap" style={{overflowX: "auto"}} >
 							{store.people.map((item, index) => {
 								return (
 										<div className="col" key={item.url}>
@@ -27,7 +27,7 @@ import { Context } from "../store/appContext";
 													<Link to={"/people/" + (index + 1)}>
 													<button className="btn btn-outline-primary me-3">Learn more!</button>
 													</Link>
-													<button className="btn btn-outline-warning"><FontAwesomeIcon icon={faHeart}/></button>
+													<button onClick={() => actions.displayFavorites(item.name)} className="btn btn-outline-warning"><FontAwesomeIcon icon={faHeart}/></button>
 												</div>
 											</div>
 										</div>
